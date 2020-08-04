@@ -25,9 +25,11 @@ class Mapa: SKNode{
         mapa.scale(to: CGSize(width: 414, height: 414))
         addChild(mapa)
     }
-
+    
     func porMapa(pos: CGPoint){
         mapa.position = pos
     }
     
+
+   
 }

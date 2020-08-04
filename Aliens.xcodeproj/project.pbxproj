@@ -17,6 +17,7 @@
 		DBBD75A424D0AA95000FF7CC /* telaOtherPlayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBD75A324D0AA95000FF7CC /* telaOtherPlayers.swift */; };
 		DBFF012224D1E52600890ADC /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFF012124D1E52600890ADC /* Arrow.swift */; };
 		DBFF012924D3337F00890ADC /* Mapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFF012824D3337F00890ADC /* Mapa.swift */; };
+		DBFF012B24D8979000890ADC /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFF012A24D8979000890ADC /* Actions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		DBBD75A324D0AA95000FF7CC /* telaOtherPlayers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = telaOtherPlayers.swift; sourceTree = "<group>"; };
 		DBFF012124D1E52600890ADC /* Arrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
 		DBFF012824D3337F00890ADC /* Mapa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapa.swift; sourceTree = "<group>"; };
+		DBFF012A24D8979000890ADC /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				DBFF012124D1E52600890ADC /* Arrow.swift */,
+				DBFF012A24D8979000890ADC /* Actions.swift */,
 				DBFF012824D3337F00890ADC /* Mapa.swift */,
 				DBBD75A124D0A928000FF7CC /* telaPlayer1.swift */,
 				DBBD75A324D0AA95000FF7CC /* telaOtherPlayers.swift */,
@@ -113,6 +116,7 @@
 				DBBD758224D0A5CF000FF7CC /* Sources */,
 				DBBD758324D0A5CF000FF7CC /* Frameworks */,
 				DBBD758424D0A5CF000FF7CC /* Resources */,
+				DBFF012C24D8B8E900890ADC /* CopyPaste Detection */,
 			);
 			buildRules = (
 			);
@@ -169,12 +173,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DBFF012C24D8B8E900890ADC /* CopyPaste Detection */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "CopyPaste Detection";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Running CPD\n#pmd cpd --files ${EXECUTABLE_NAME} --minimum-tokens 50 --language swift --encoding UTF-8 --format net.sourceforge.pmd.cpd.XMLRenderer > /Users/julianaprado/Documents/InvasãoAlienígena/Aliens/cpd-output.xml --failOnViolation true\n\n# Running script\n#php /Users/julianaprado/Documents/InvasãoAlienígena/Aliens/cpd_script.php -cpd-xml cpd-output.xml\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DBBD758224D0A5CF000FF7CC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DBFF012924D3337F00890ADC /* Mapa.swift in Sources */,
+				DBFF012B24D8979000890ADC /* Actions.swift in Sources */,
 				DBBD75A224D0A928000FF7CC /* telaPlayer1.swift in Sources */,
 				DBBD75A424D0AA95000FF7CC /* telaOtherPlayers.swift in Sources */,
 				DBBD759024D0A5CF000FF7CC /* GameScene.swift in Sources */,

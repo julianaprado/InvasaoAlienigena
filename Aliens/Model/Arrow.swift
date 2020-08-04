@@ -20,13 +20,21 @@ class Arrow:SKNode{
     
     override init() {
         super.init()
-        arrow.scale(to: CGSize(width: 100, height: 100))
+        arrow.scale(to: CGSize(width: 70, height: 70))
         arrow.zPosition = 4
+        label.zPosition = 7
+        label.color = .red
+        label.fontColor = .red
         addChild(arrow)
         addChild(label)
     }
     
-
+    convenience init(position: CGPoint, rotation: CGFloat){
+        self.init()
+        arrow.position = position
+        label.position = CGPoint(x: position.x, y: position.y - 50)
+        self.setZRotation(rotacao: rotation)
+    }
     
     func nomearArrow(nome: String){
         arrow.name = nome
@@ -38,7 +46,7 @@ class Arrow:SKNode{
     }
     
     func setZRotation(rotacao: CGFloat){
-        arrow.zRotation = .pi/4 * -1
+        arrow.zRotation = rotacao
     }
     
 }

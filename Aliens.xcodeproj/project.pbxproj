@@ -18,6 +18,7 @@
 		DBFF012224D1E52600890ADC /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFF012124D1E52600890ADC /* Arrow.swift */; };
 		DBFF012924D3337F00890ADC /* Mapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFF012824D3337F00890ADC /* Mapa.swift */; };
 		DBFF012B24D8979000890ADC /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFF012A24D8979000890ADC /* Actions.swift */; };
+		DBFF013F24D9FD1100890ADC /* NSObject+GameKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DBFF013E24D9FD1100890ADC /* NSObject+GameKitHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,9 @@
 		DBFF012124D1E52600890ADC /* Arrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
 		DBFF012824D3337F00890ADC /* Mapa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapa.swift; sourceTree = "<group>"; };
 		DBFF012A24D8979000890ADC /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		DBFF013C24D9FD1100890ADC /* Aliens-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Aliens-Bridging-Header.h"; sourceTree = "<group>"; };
+		DBFF013D24D9FD1100890ADC /* NSObject+GameKitHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+GameKitHelper.h"; sourceTree = "<group>"; };
+		DBFF013E24D9FD1100890ADC /* NSObject+GameKitHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GameKitHelper.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,7 @@
 		DBBD757D24D0A5CF000FF7CC = {
 			isa = PBXGroup;
 			children = (
+				DBFF013B24D9FCF500890ADC /* GameKit */,
 				DBBD758824D0A5CF000FF7CC /* Aliens */,
 				DBBD758724D0A5CF000FF7CC /* Products */,
 			);
@@ -106,6 +111,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		DBFF013B24D9FCF500890ADC /* GameKit */ = {
+			isa = PBXGroup;
+			children = (
+				DBFF013D24D9FD1100890ADC /* NSObject+GameKitHelper.h */,
+				DBFF013E24D9FD1100890ADC /* NSObject+GameKitHelper.m */,
+				DBFF013C24D9FD1100890ADC /* Aliens-Bridging-Header.h */,
+			);
+			path = GameKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,6 +154,7 @@
 				TargetAttributes = {
 					DBBD758524D0A5CF000FF7CC = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 				};
 			};
@@ -204,6 +220,7 @@
 				DBFF012B24D8979000890ADC /* Actions.swift in Sources */,
 				DBBD75A224D0A928000FF7CC /* telaPlayer1.swift in Sources */,
 				DBBD75A424D0AA95000FF7CC /* telaOtherPlayers.swift in Sources */,
+				DBFF013F24D9FD1100890ADC /* NSObject+GameKitHelper.m in Sources */,
 				DBBD759024D0A5CF000FF7CC /* GameScene.swift in Sources */,
 				DBBD759224D0A5CF000FF7CC /* GameViewController.swift in Sources */,
 				DBBD758A24D0A5CF000FF7CC /* AppDelegate.swift in Sources */,
@@ -351,6 +368,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z9QZ625W6Q;
 				INFOPLIST_FILE = Aliens/Info.plist;
@@ -360,6 +378,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.julianaprado.Aliens;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GameKit/Aliens-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -369,6 +389,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z9QZ625W6Q;
 				INFOPLIST_FILE = Aliens/Info.plist;
@@ -378,6 +399,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.julianaprado.Aliens;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GameKit/Aliens-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

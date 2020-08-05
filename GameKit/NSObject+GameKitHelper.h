@@ -11,9 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @import GameKit;
+extern NSString *const PresentAuthenticationViewController;
 
 @interface GameKitHelper : NSObject
-
+- (void)authenticateLocalPlayer;
 @property (nonatomic, readonly) UIViewController *authenticationViewController;
 @property (nonatomic, readonly) NSError *lastError;
 

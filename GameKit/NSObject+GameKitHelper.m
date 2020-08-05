@@ -7,6 +7,7 @@
 //
 
 #import "NSObject+GameKitHelper.h"
+NSString *const PresentAuthenticationViewController = @"present_authentication_view_controller";
 
 @implementation NSObject (GameKitHelper)
 
@@ -64,10 +65,23 @@
 
 - (void)setAuthenticationViewController:(UIViewController *)authenticationViewController
 {
+    if (authenticationViewController != nil) {
+      _authenticationViewController = authenticationViewController;
+      [[NSNotificationCenter defaultCenter]
+       postNotificationName:PresentAuthenticationViewController
+       object:self];
+    }
+    
 }
 
+
 - (void)setLastError:(NSError *)error
-{
-}
+    {
+      _lastError = [error copy];
+      if (_lastError) {
+        NSLog(@"GameKitHelper ERROR: %@",
+              [[_lastError userInfo] description]);
+      }
+    }
 @end
 
